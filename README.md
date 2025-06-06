@@ -3,11 +3,11 @@
 Este repositorio agrupa los cinco talleres desarrollados en el curso **SI7004_6621_2561: Visión por Computador** de la Maestría en Ciencias de Datos de la Universidad EAFIT. Cada carpeta contiene los notebooks ejecutados y los conjuntos de datos mínimos para reproducir los resultados.
 
 ## Contenido
-- **Taller 01 – Clasificación de Enfermedades de Mango**: extracción de características HOG y entrenamiento de un clasificador SVM.
-- **Taller 02 – Clasificación con AutoGluon**: comparación automática de arquitecturas en imágenes de mango.
+- **Taller 01 – Clasificación de Enfermedades de Mango**: 
+- **Taller 02 – Clasificación con AutoGluon**: 
 - **Taller 03 – ViTT: Recuperación Texto–Imagen**: fine-tuning ligero de un transformer multimodal para búsqueda texto→imagen.
-- **Taller 04 – Modelos Fundacionales y Tareas de Pretexto**: entrenamiento auto-supervisado (p. ej. BEiT‑4c) mediante patch masking.
-- **Taller 05 – Detección de Aviones y Coordenadas**: detección de objetos (YOLOv5/Faster R‑CNN) y regresión de bounding boxes.
+- **Taller 04 – Modelos Fundacionales y Tareas de Pretexto**: 
+- **Taller 05 – Detección de Aviones y Coordenadas**: 
 
 ## Resultados Destacados
 - **Taller 01**: el clasificador SVM logró una exactitud del **77 %** y un F1‑score global de **0.77**, con precisión superior al 90 % para algunas clases (ver notebook para el reporte completo).
