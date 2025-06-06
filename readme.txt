@@ -1,11 +1,18 @@
-Este repositorio contiene los talleres realizados durante el curso SI7004_6621_2561_VISION POR COMPUTADOR del programa de Maestria en Ciencias de Datos de lA uNIVERSIDAD EAFIT
+# Visión por Computador – Talleres EAFIT 2025
 
-Taller 01 Introduccion al Modelo de Clasificacion de Enfermedades de Mango
+Este repositorio contiene los cinco talleres prácticos del curso **SI7004_6621_2561: Visión por Computador** (Maestría en Ciencias de Datos, Universidad EAFIT):
 
-Taller 02 Clasificacion Cabeza de Clasificacion con autogluon 
+- **Taller 01: Clasificación de Enfermedades de Mango**  
+  Extracción de características HOG y SVM.
 
-ViTT Sistema d Recuperacion Texto Imagen
+- **Taller 02: Clasificación con AutoGluon**  
+  AutoML para comparar arquitecturas en imágenes de mango.
 
-Taller 04 Modelo Fundacional Tarea de Pretexto
+- **Taller 03: ViTT – Recuperación Texto–Imagen**  
+  Fine-tuning de un transformer multimodal para búsqueda texto→imagen.
 
-Taller 05 Deteccion Coordenadas de Aviones 
+- **Taller 04: Modelos Fundacionales y Tareas de Pretexto**  
+  Entrenamiento auto-supervisado (p. ej., BEiT-4c, patch masking).
+
+- **Taller 05: Detección de Aviones y Coordenadas**  
+  Detector de objetos (YOLOv5/Faster R-CNN) y extracción de bounding boxes.
