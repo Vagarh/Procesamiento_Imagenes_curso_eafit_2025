@@ -1,26 +1,40 @@
 # Visión por Computador – Talleres EAFIT 2025
 
-Este repositorio agrupa los cinco talleres desarrollados en el curso **SI7004_6621_2561: Visión por Computador** de la Maestría en Ciencias de Datos de la Universidad EAFIT. Cada carpeta contiene los notebooks ejecutados y los conjuntos de datos mínimos para reproducir los resultados.
+Este repositorio agrupa los cinco talleres del curso **SI7004_6621_2561: Visión por Computador** de la Maestría en Ciencias de Datos (Universidad EAFIT). Cada carpeta incluye los notebooks ejecutados y los datos mínimos necesarios para reproducir los resultados.
 
-## Contenido
-- **Taller 01 – Clasificación de Enfermedades de Mango**: 
-- **Taller 02 – Clasificación con AutoGluon**: 
-- **Taller 03 – ViTT: Recuperación Texto–Imagen**: fine-tuning ligero de un transformer multimodal para búsqueda texto→imagen.
-- **Taller 04 – Modelos Fundacionales y Tareas de Pretexto**: 
-- **Taller 05 – Detección de Aviones y Coordenadas**: 
+## Estructura
 
-## Resultados Destacados
-- **Taller 01**: el clasificador SVM logró una exactitud del **77 %** y un F1‑score global de **0.77**, con precisión superior al 90 % para algunas clases (ver notebook para el reporte completo).
-- **Taller 03**: tras 3 épocas de ajuste fino, el **Recall@5 global pasó del 74 % al 87 %** y la clase “hot dog” mejoró de 42 % a 78 %.
+- **Taller 01 – Clasificación de Enfermedades de Mango**  
+  Desarrollo de un clasificador SVM sobre imágenes de hojas de mango enfermas.  
+  - **Resultados:**  
+    - Exactitud (accuracy): 77 %  
+    - F1-score global: 0.77  
+    - Precisión > 90 % para algunas clases  
 
-![](https://github.com/Vagarh/Procesamiento_Imagenes_curso_eafit_2025/blob/main/Imagenes/Taller_03.png)
+- **Taller 02 – Clasificación con AutoGluon**  
+  Implementación de un pipeline automático con AutoGluon para clasificación de imágenes (inferencia sobre features extraídos con CNN).  
 
-- **Taller 05**: el modelo de bounding boxes obtuvo una **IoU de 0.82–0.91** en validación, superponiendo de manera precisa las cajas predichas sobre las reales.
-![](https://github.com/Vagarh/Procesamiento_Imagenes_curso_eafit_2025/blob/main/Imagenes/Taller_5.png)
+- **Taller 03 – ViTT: Recuperación Texto→Imagen**  
+  Fine-tuning ligero de un Transformer multimodal para búsqueda texto→imagen.  
+  - **Resultados:**  
+    - Recall@5 global: de 74 % → 87 % tras 3 épocas  
+    - Clase “hot dog”: de 42 % → 78 %  
 
-## Uso
-1. Instalar las dependencias indicadas al inicio de cada notebook (p. ej. mediante `pip` o `conda`).
-2. Abrir los notebooks (`*.ipynb`) con JupyterLab o VS Code y ejecutar celda por celda.
-3. Algunos cuadernos requieren descargar pesos pre-entrenados de internet (AutoGluon, YOLOv5, etc.).
+  ![Ejemplo Taller 03](Imagenes/Taller_03.png)
 
-Las rutas a datos se han configurado relativas a este repositorio, por lo que basta con clonarlo y abrir el notebook correspondiente.
+- **Taller 04 – Modelos Fundacionales y Tareas de Pretexto**  
+  Exploración de arquitecturas auto-supervisadas (e.g., masked autoencoders) y tareas de pretexto para aprendizaje de representaciones en visión por computadora.  
+
+- **Taller 05 – Detección de Aviones y Coordenadas**  
+  Entrenamiento de un modelo de detección de objetos (bounding boxes) para identificar aviones en imágenes aéreas.  
+  - **Resultados:**  
+    - IoU en validación: 0.82–0.91  
+
+  ![Ejemplo Taller 05](Imagenes/Taller_5.png)
+
+## Guía de uso
+
+1. **Clonar el repositorio**  
+   ```bash
+   git clone https://github.com/Vagarh/Procesamiento_Imagenes_curso_eafit_2025.git
+   cd Procesamiento_Imagenes_curso_eafit_2025
