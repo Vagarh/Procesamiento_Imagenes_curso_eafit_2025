@@ -12,7 +12,12 @@ Este repositorio agrupa los cinco talleres desarrollados en el curso **SI7004_66
 ## Resultados Destacados
 - **Taller 01**: el clasificador SVM logró una exactitud del **77 %** y un F1‑score global de **0.77**, con precisión superior al 90 % para algunas clases (ver notebook para el reporte completo).
 - **Taller 03**: tras 3 épocas de ajuste fino, el **Recall@5 global pasó del 74 % al 87 %** y la clase “hot dog” mejoró de 42 % a 78 %.
+
+https://github.com/Vagarh/Procesamiento_Imagenes_curso_eafit_2025/blob/main/Imagenes/Taller_03.png
+
 - **Taller 05**: el modelo de bounding boxes obtuvo una **IoU de 0.82–0.91** en validación, superponiendo de manera precisa las cajas predichas sobre las reales.
+
+https://github.com/Vagarh/Procesamiento_Imagenes_curso_eafit_2025/blob/main/Imagenes/Taller_5.png
 
 ## Uso
 1. Instalar las dependencias indicadas al inicio de cada notebook (p. ej. mediante `pip` o `conda`).
