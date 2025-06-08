@@ -4,33 +4,49 @@ Este repositorio agrupa los cinco talleres del curso **SI7004_6621_2561: Visión
 
 ## Estructura
 
-- **Taller 01 – Clasificación de Enfermedades de Mango**  
-  Desarrollo de un clasificador SVM sobre imágenes de hojas de mango enfermas.  
-  - **Resultados:**  
-    - Exactitud (accuracy): 77 %  
-    - F1-score global: 0.77  
-    - Precisión > 90 % para algunas clases  
+El repositorio agrupa cinco talleres de Visión por Computador, cada uno con su propósito, metodología y resultados principales:
 
-- **Taller 02 – Clasificación con AutoGluon**  
-  Implementación de un pipeline automático con AutoGluon para clasificación de imágenes (inferencia sobre features extraídos con CNN).  
+1. **Taller 01 – Clasificación de Enfermedades de Mango**  
+   Desarrollo de un clasificador SVM para detectar distintas patologías en hojas de mango.  
+   **Resultados clave:**
+   - **Accuracy:** 77,12 %  
+   - **F1-Score global:** 0.772  
+   - **Precisión:** > 90 % en clases seleccionadas  
 
-- **Taller 03 – ViTT: Recuperación Texto→Imagen**  
-  Fine-tuning ligero de un Transformer multimodal para búsqueda texto→imagen.  
-  - **Resultados:**  
-    - Recall@5 global: de 74 % → 87 % tras 3 épocas  
-    - Clase “hot dog”: de 42 % → 78 %  
+   **Reporte de clasificación**  
+   | Enfermedad         | Precisión | Recall | F1-score | Soporte |
+   |--------------------|----------:|-------:|---------:|--------:|
+   | Anthracnose        |      0.64  |  0.68  |   0.66   |      93 |
+   | Bacterial Canker   |      0.79  |  0.92  |   0.85   |      91 |
+   | Cutting Weevil     |      0.99  |  0.97  |   0.98   |     101 |
+   | Die Back           |      0.93  |  0.86  |   0.89   |      90 |
+   | Gall Midge         |      0.61  |  0.72  |   0.66   |      86 |
+   | Healthy            |      0.69  |  0.74  |   0.71   |     104 |
+   | Powdery Mildew     |      0.85  |  0.71  |   0.78   |     112 |
+   | Sooty Mould        |      0.73  |  0.62  |   0.67   |     123 |
+   | **Macro avg**      |      0.78  |  0.78  |   0.77   |     800 |
+   | **Weighted avg**   |      0.78  |  0.77  |   0.77   |     800 |
 
-  ![Ejemplo Taller 03](Imagenes/Taller_03.png)
+2. **Taller 02 – Clasificación con AutoGluon**  
+   Implementación de un pipeline automático con AutoGluon que aprovecha features extraídos por una CNN para clasificación de imágenes.
 
-- **Taller 04 – Modelos Fundacionales y Tareas de Pretexto**  
-  Exploración de arquitecturas auto-supervisadas (e.g., masked autoencoders) y tareas de pretexto para aprendizaje de representaciones en visión por computadora.  
+3. **Taller 03 – ViTT: Recuperación Texto → Imagen**  
+   Fine-tuning ligero de un transformer multimodal para mejorar la búsqueda texto → imagen.  
+   **Mejoras tras 3 épocas:**
+   - **Recall@5 global:** 74 % → 87 %  
+   - **Clase “hot dog”:** 42 % → 78 %  
 
-- **Taller 05 – Detección de Aviones y Coordenadas**  
-  Entrenamiento de un modelo de detección de objetos (bounding boxes) para identificar aviones en imágenes aéreas.  
-  - **Resultados:**  
-    - IoU en validación: 0.82–0.91  
+   ![Ejemplo Taller 03](Imagenes/Taller_03.png)
 
-  ![Ejemplo Taller 05](Imagenes/Taller_5.png)
+4. **Taller 04 – Modelos Fundacionales y Tareas de Pretexto**  
+   Exploración de arquitecturas auto-supervisadas (p. ej., masked autoencoders) y diseño de tareas de pretexto para aprender representaciones robustas en visión por computador.
+
+5. **Taller 05 – Detección de Aviones y Coordenadas**  
+   Entrenamiento de un modelo de detección de objetos para localizar aviones en imágenes aéreas.  
+   **Rendimiento en validación:**
+   - **IoU:** entre 0.82 y 0.91  
+
+   ![Ejemplo Taller 05](Imagenes/Taller_05.png)
 
 ## Guía de uso
 
