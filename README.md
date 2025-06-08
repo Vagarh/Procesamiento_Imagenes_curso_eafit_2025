@@ -28,7 +28,7 @@ El repositorio agrupa cinco talleres de Visión por Computador, cada uno con su 
    | **Weighted avg**   |      0.78  |  0.77  |   0.77   |     800 |
 
 2. **Taller 02 – Clasificación con AutoGluon**  
-   Implementación de un pipeline automático con AutoGluon que aprovecha features extraídos por una CNN para clasificación de imágenes.
+   Implementación de un pipeline automático con AutoGluon que aprovecha features extraídos por usando Resnet50a pesar del ajuste automático, el accuracy quedó por debajo del 10 %, evidenciando la necesidad de técnicas de balanceo y augmentación más avanzadas.
 
 3. **Taller 03 – ViTT: Recuperación Texto → Imagen**  
    Fine-tuning ligero de un transformer multimodal para mejorar la búsqueda texto → imagen.  
@@ -39,7 +39,7 @@ El repositorio agrupa cinco talleres de Visión por Computador, cada uno con su 
    ![Ejemplo Taller 03](https://github.com/Vagarh/Procesamiento_Imagenes_curso_eafit_2025/blob/18657a98c0e7bdf23d499cb8ae6d3b0b8feac0b9/Imagenes/Taller_03.png)
 
 4. **Taller 04 – Modelos Fundacionales y Tareas de Pretexto**  
-   Exploración de arquitecturas auto-supervisadas (p. ej., masked autoencoders) y diseño de tareas de pretexto para aprender representaciones robustas en visión por computador.
+   En este experimento, y dado el presupuesto de cómputo limitado, entrenamos dos arquitecturas ligeras (CNN y ViT) para la tarea de Patch Permutation Prediction usando únicamente un pequeño subconjunto de los datos —aprox. 5 % de las imágenes por clase (≈25 442 para entrenamiento y 6 360 para validación)— durante 8 épocas, obteniendo un accuracy máximo de ≈ 5.17 % en entrenamiento y ≈ 4.40 % en validación, con la pérdida estabilizada alrededor de 3.18.
 
 5. **Taller 05 – Detección de Aviones y Coordenadas**  
    Entrenamiento de un modelo de detección de objetos para localizar aviones en imágenes aéreas.  
