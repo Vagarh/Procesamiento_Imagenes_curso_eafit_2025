@@ -3,9 +3,7 @@ import numpy as np
 import pandas as pd
 from PIL import Image, ImageEnhance
 from tensorflow.keras.utils import Sequence
-
-# Constants (these might need to be passed as arguments or configured globally later)
-IMG_SIZE = (300, 300) # This is defined in the notebook's config section
+from src.config import IMG_SIZE
 
 class DataGenerator(Sequence):
     def __init__(self, df, img_dir, batch, augment=False):

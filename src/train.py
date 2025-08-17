@@ -5,27 +5,24 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.optimizers.schedules import CosineDecay
 from tensorflow.keras import callbacks
 
-# Import modules
-from data_loader import DataGenerator
-from model_utils import build_model, combined_loss, IMG_SIZE, LAMBDA_IOU
-from visualization import plot_samples
+from src.data_loader import DataGenerator
+from src.models import build_model
+from src.losses import combined_loss
+from src.visualization import plot_samples
+from src.config import (
+    CSV_PATH,
+    IMG_DIR,
+    BATCH_SIZE,
+    TOTAL_EPOCHS,
+    LR_HEAD,
+    LR_FINE,
+    LAMBDA_IOU,
+    CHECKPOINT_DIR,
+    BEST_MODEL_PATH,
+)
 
-# Configuration (can be moved to a separate config file later)
-BATCH_SIZE = 16
-TOTAL_EPOCHS = 50
-LR_HEAD = 1e-3
-LR_FINE = 1e-5
-
-# Update paths to be relative to the project root
-PROJECT_ROOT = "d:\\Users\\jcardonr\\Documents\\Procesamiento_Imagenes_curso_eafit_2025"
-CSV_PATH = os.path.join(PROJECT_ROOT, "legacy", "Taller_05_Deteccion_Realizar un modelo de deteccion de boundboxes_ok", "Airplanes_clean.csv")
-IMG_DIR = os.path.join(PROJECT_ROOT, "legacy", "Taller_05_Deteccion_Realizar un modelo de deteccion de boundboxes_ok", "airplanes")
-CHECKPOINT_DIR = os.path.join(PROJECT_ROOT, "models", "checkpoints")
-BEST_MODEL_PATH = os.path.join(PROJECT_ROOT, "models", "best_bbox_model.keras")
-
-os.makedirs(CHECKPOINT_DIR, exist_ok=True)
-
-if __name__ == '__main__':
+def main():
+    """Main training script."""
     # 1) Carga y split
     df = pd.read_csv(CSV_PATH)
     train_df, val_df = train_test_split(df, test_size=0.2, random_state=42)
@@ -45,9 +42,9 @@ if __name__ == '__main__':
     decay_steps = len(train_gen) * 10  # 10 épocas
     lr_schedule = CosineDecay(LR_HEAD, decay_steps, alpha=1e-4)
 
-    model.compile(optimizer=Adam(lr_schedule), loss=combined_loss, metrics=['mae'])
+    model.compile(optimizer=Adam(lr_schedule), loss=combined_loss(LAMBDA_IOU), metrics=['mae'])
 
-    history_head = model.fit(
+    model.fit(
         train_gen, validation_data=val_gen,
         epochs=10,
         callbacks=[callbacks.EarlyStopping('val_loss', patience=3, restore_best_weights=True)]
@@ -58,7 +55,9 @@ if __name__ == '__main__':
     for layer in backbone.layers[-20:]:
         layer.trainable = True
 
-    model.compile(optimizer=Adam(LR_FINE), loss=combined_loss, metrics=['mae'])
+    model.compile(optimizer=Adam(LR_FINE), loss=combined_loss(LAMBDA_IOU), metrics=['mae'])
+
+    os.makedirs(CHECKPOINT_DIR, exist_ok=True)
 
     cb_list = [
         callbacks.EarlyStopping('val_loss', patience=10, restore_best_weights=True),
@@ -78,3 +77,6 @@ if __name__ == '__main__':
 
     # 5) Visualización final
     plot_samples(model, val_df, IMG_DIR, n=10)
+
+if __name__ == '__main__':
+    main()

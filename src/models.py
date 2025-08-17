@@ -3,7 +3,7 @@ from tensorflow.keras import layers, models
 from tensorflow.keras.applications import EfficientNetB3
 
 from .losses import sort_corners # Import sort_corners from losses module
-from .data_loader import IMG_SIZE # Import IMG_SIZE from data_loader module
+from .config import IMG_SIZE # Import IMG_SIZE from data_loader module
 
 def build_model():
     backbone = EfficientNetB3(input_shape=IMG_SIZE+(3,), include_top=False,

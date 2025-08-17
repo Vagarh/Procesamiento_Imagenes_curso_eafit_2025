@@ -1,9 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras.losses import Huber
 
-# Constants (these might need to be passed as arguments or configured globally later)
-LAMBDA_IOU = 1.0 # This is defined in the notebook's config section
-
 huber = Huber()
 
 def sort_corners(boxes):
@@ -33,5 +30,7 @@ def giou_loss(y_true, y_pred):
     giou = iou - (area_c - union) / area_c
     return tf.reduce_mean(1. - tf.clip_by_value(giou, -1., 1.))
 
-def combined_loss(y_true, y_pred):
-    return huber(y_true, y_pred) + LAMBDA_IOU * giou_loss(y_true, y_pred)
+def combined_loss(lambda_iou):
+    def loss(y_true, y_pred):
+        return huber(y_true, y_pred) + lambda_iou * giou_loss(y_true, y_pred)
+    return loss
